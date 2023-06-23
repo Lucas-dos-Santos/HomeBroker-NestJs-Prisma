@@ -9,16 +9,7 @@ export class WalletAssetsService {
     return this.prismaService.walletAsset.findMany({
       where: {
         wallet_id: filter.wallet_id,
-      },
-      include: {
-        Asset: {
-          select: {
-            id: true,
-            symbol: true,
-            price: true,
-          },
-        },
-      },
+      }
     });
   }
 
